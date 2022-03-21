@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="22.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="\Qxml-multi-models-sample.xpr\E" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options>
+            <serialized version="22.1" xml:space="preserve">
+                <serializableOrderedMap>
+                    <entry>
+                        <String>catalogs.v5</String>
+                        <String-array>
+                            <String>file:/D:/_WORK/_bitbucket-clean/mricaud/xml-multi-models-sample/src/main/catalogs/catalog-for-dtd.xml</String>
+                        </String-array>
+                    </entry>
+                    <entry>
+                        <String>key.xml.catalog.option.pane</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                </serializableOrderedMap>
+            </serialized>
+        </options>
+    </meta>
+    <projectTree name="xml-multi-models-sample.xpr">
+        <folder path="."/>
+    </projectTree>
+</project>

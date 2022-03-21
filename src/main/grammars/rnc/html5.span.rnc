@@ -1,0 +1,3 @@
+default namespace = "http://www.w3.org/1999/xhtml"
+include "dependency:/org.idpf+epubcheck/com/adobe/epubcheck/schema/30/epub-xhtml-30.rnc"
+start |= html5.span
