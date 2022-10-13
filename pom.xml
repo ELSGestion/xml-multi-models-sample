@@ -2,20 +2,47 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>eu.els.sie.xml</groupId>
+  <groupId>fr.lefebvre-dalloz.xml</groupId>
   <artifactId>xml-multi-models-sample</artifactId>
-  <version>1.00.00-SNAPSHOT</version>
+  <version>1.00.00</version>
   <packaging>jar</packaging>
+  
+  <name>XML multi models samples</name>
+  <description>A set of XML files and models fileset (dtd, xsd, rng, rnc, schematron, ndvl) with various cases to test XML validation</description>
+  <inceptionYear>2018</inceptionYear>
+  <url>https://github.com/ELSGestion/xml-multi-models-sample</url>
+  
+  <licenses>
+    <license>
+      <name>Mozilla Public License 2.0</name>
+      <url>https://opensource.org/licenses/MPL-2.0</url>
+    </license>
+  </licenses>
+  
+  <developers>
+    <developer>
+      <name>Matthieu Ricaud-Dussarget</name>
+      <email>ricaudm@gmail.com</email>
+      <roles>
+        <role>developer</role>
+        <role>project owner</role>
+      </roles>
+      <timezone>UTC+1</timezone>
+      <url>https://github.com/mricaud/</url>
+    </developer>
+  </developers>
+  
+  <scm>
+    <connection>scm:git:https://github.com/ELSGestion/xml-multi-models-sample.git</connection>
+    <developerConnection>scm:git:https://github.com/ELSGestion/xml-multi-models-sample.git</developerConnection>
+    <url>scm:git:https://github.com/ELSGestion/xml-multi-models-sample.git</url>
+    <tag>HEAD</tag>
+  </scm>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <scm>
-    <developerConnection>scm:git:https://bitbucket.org/mricaud/xml-multi-models-sample.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
-  
   
   <dependencies>
     <!--XHTML models as RNC (used in rnc/html5.span.rnc)-->
@@ -62,6 +89,53 @@
         </executions>
       </plugin>
     </plugins>
+    
   </build>
+  
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+  
+  <profiles>
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.7</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>ossrh</serverId>
+              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>true</autoReleaseAfterClose>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
   
 </project>
