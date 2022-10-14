@@ -8,8 +8,8 @@
   <packaging>jar</packaging>
   
   <name>XML multi models samples</name>
-  <description>A set of XML files and models fileset (dtd, xsd, rng, rnc, schematron, ndvl) with various cases to test XML validation</description>
-  <inceptionYear>2018</inceptionYear>
+  <description>A set of XML files and models fileset (dtd, xsd, rng, rnc, schematron, ndvl) with various cases aiming at testing XML validation</description>
+  <inceptionYear>2022</inceptionYear>
   <url>https://github.com/ELSGestion/xml-multi-models-sample</url>
   
   <licenses>
@@ -22,7 +22,7 @@
   <developers>
     <developer>
       <name>Matthieu Ricaud-Dussarget</name>
-      <email>ricaudm@gmail.com</email>
+      <email>m.ricaud-dussarget@lefebvre-dalloz.fr</email>
       <roles>
         <role>developer</role>
         <role>project owner</role>
@@ -75,9 +75,10 @@
       <plugin>
         <groupId>top.marchand.xml.maven</groupId>
         <artifactId>catalogBuilder-maven-plugin</artifactId>
+        <version>1.0.4</version>
         <executions>
           <execution>
-            <phase>generate-sources</phase>
+            <phase>package</phase>
             <goals>
               <goal>catalog</goal>
             </goals>
